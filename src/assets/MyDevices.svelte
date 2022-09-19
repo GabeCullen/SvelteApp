@@ -11,13 +11,13 @@ let myValue_sound
     My devices
 
     <div class="row">
-        <div class="device lights">
+        <div class="device lights" class:on={myValue_lights == "on"}>
             <div class="switchAndLabel">
                 {myValue_lights} <Switch bind:value={myValue_lights} label="" options={['off', 'on']} />
             </div>
             <div>Lights</div>
         </div>
-        <div class="device climate">
+        <div class="device climate" class:on={myValue_climate == "on"}>
             <div class="switchAndLabel">
                 {myValue_climate} <Switch bind:value={myValue_climate} label="" options={['off', 'on']} />
             </div>
@@ -26,13 +26,13 @@ let myValue_sound
     </div>
 
     <div class="row">
-        <div class="device ac">
+        <div class="device ac" class:on={myValue_ac == "on"}>
             <div class="switchAndLabel">
                 {myValue_ac} <Switch bind:value={myValue_ac} label="" options={['off', 'on']} />
             </div>
             <div>AC</div>
         </div>
-        <div class="device sound">
+        <div class="device sound" class:on={myValue_sound == "on"}>
             <div class="switchAndLabel">
                 {myValue_sound} <Switch bind:value={myValue_sound} label="" options={['off', 'on']} />
             </div>
@@ -77,19 +77,23 @@ let myValue_sound
     gap: 10px;
 }
 
-.sound {
+.sound.on {
     background: linear-gradient(225deg, #932cb6, #52036c);
 }
 
-.ac {
+.ac.on {
     background: linear-gradient(225deg, #4057c7, #162ea5);
 }
 
-.climate {
+.climate.on {
     background: linear-gradient(225deg, #e89622, #d37b00);
 }
 
-.lights {
+.lights.on {
     background: linear-gradient(225deg, #fbd100, #c6af00);
+}
+
+.climate + .lights + .ac + .sound{
+    background: linear-gradient(225deg, #2b2b2b, #000000);
 }
 </style>
