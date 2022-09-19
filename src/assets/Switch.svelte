@@ -16,7 +16,7 @@
 </script>
 
 {#if design == "hot-cold"}
-    <div class="slider-button" on:click={() => toggle()}>
+    <div class="slider-button-hotcold" on:click={() => toggle()}>
         <div class="option1 hot" id={options[0]} class:active={value == options[0]}>
             <img src="/images/fire.png" alt="">
         </div>
@@ -40,13 +40,22 @@
     align-items: center;
 }
 
-.slider-button {
+.slider-button-hotcold {
     display: flex;
     justify-content: space-around;
     width: 45px;
     height: 25px;
     border-radius: 20px;
     background-color: rgb(0, 0, 0);
+}
+
+.slider-button {
+    display: flex;
+    justify-content: space-around;
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .option1 img {
@@ -65,11 +74,6 @@
     border-radius: 12px;
 }
 
-.option1.off.active {
-    background: white;
-    border-radius: 12px;
-}
-
 .option1.active img {
     filter: brightness(1);
 }
@@ -79,8 +83,13 @@
     border-radius: 12px;
 }
 
+.option1.off.active {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+}
+
 .option2.on.active {
-    background: radial-gradient(#acfeff, #27b0ea);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
 }
 

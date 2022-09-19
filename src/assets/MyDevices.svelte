@@ -54,7 +54,7 @@ let myValue_sound
 }
 
 .device{
-    background: linear-gradient(#181818, #4d4a4a, );
+    background: linear-gradient(#181818, #4d4a4a);
     border: solid 2px black;
     border-style: groove;
     border-radius: 20px;
@@ -78,6 +78,18 @@ let myValue_sound
 }
 
 .sound {
-    background: #181818;
+    background: linear-gradient(225deg, #932cb6, #52036c);
+}
+
+.ac {
+    background: linear-gradient(225deg, #4057c7, #162ea5);
+}
+
+.climate {
+    background: linear-gradient(225deg, #e89622, #d37b00);
+}
+
+.lights {
+    background: linear-gradient(225deg, #fbd100, #c6af00);
 }
 </style>
