@@ -12,7 +12,7 @@ import MyDevices from "./assets/MyDevices.svelte";
 <div class="root">
     <div class="heading">
         <div>Temperature</div>
-        <Switch bind:value={multiValue} label="hot-cold-toggle" design="multi" options={['heat', 'cool']} />
+        <Switch bind:value={multiValue} label="hot-cold-toggle" design="hot-cold" options={['heat', 'cool']} />
     </div>
 
     <div>
@@ -44,10 +44,6 @@ import MyDevices from "./assets/MyDevices.svelte";
 </div>
 
 <style>
-.center {
-    margin: auto;
-    width: 50%;
-}
 
 .root div.sectionWithDivider {
   background-color: #181818; 

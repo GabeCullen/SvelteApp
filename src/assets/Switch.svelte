@@ -2,7 +2,6 @@
     export let label;
     export let design = 'inner label'
     export let options = [];
-    export let fontSize = 16;
     export let value = options[0];
 
 
@@ -16,18 +15,25 @@
 
 </script>
 
-<div class="slider-button" on:click={() => toggle()}>
-    <div class="option1" id={options[0]} class:active={value == options[0]}>
-        {#if label == "hot-cold-toggle"}
+{#if design == "hot-cold"}
+    <div class="slider-button" on:click={() => toggle()}>
+        <div class="option1 hot" id={options[0]} class:active={value == options[0]}>
             <img src="/images/fire.png" alt="">
-        {/if}
-    </div>
-    <div class="option2" id={options[1]} class:active={value == options[1]}>
-        {#if label == "hot-cold-toggle"}
+        </div>
+        <div class="option2 cold" id={options[1]} class:active={value == options[1]}>
             <img src="/images/cold.png" alt="">
-        {/if}
+        </div>
     </div>
-</div>
+{:else}
+    <div class="slider-button" on:click={() => toggle()}>
+        <div class="option1 off" id={options[0]} class:active={value == options[0]}>
+        </div>
+        <div class="option2 on" id={options[1]} class:active={value == options[1]}>
+        </div>
+    </div>
+{/if}
+
+
 <style>
 * {
     display: flex;
@@ -54,8 +60,13 @@
     width: 22px;
 }
 
-.option1.active {
+.option1.hot.active {
     background: radial-gradient(#ffacac, #ea2727);
+    border-radius: 12px;
+}
+
+.option1.off.active {
+    background: white;
     border-radius: 12px;
 }
 
@@ -63,7 +74,12 @@
     filter: brightness(1);
 }
 
-.option2.active {
+.option2.cold.active {
+    background: radial-gradient(#acfeff, #27b0ea);
+    border-radius: 12px;
+}
+
+.option2.on.active {
     background: radial-gradient(#acfeff, #27b0ea);
     border-radius: 12px;
 }
