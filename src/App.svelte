@@ -8,9 +8,11 @@ import TemperatureControl from "./TemperatureControl.svelte";
 	<!-- <div>
 		<HomeDashboard />
 	</div> -->
-	<div >
+	<!-- <div >
 		<TemperatureControl />
-	</div>
+	</div> -->
+
+	hi
 </div>
 
 <style>
