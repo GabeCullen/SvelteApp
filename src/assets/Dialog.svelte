@@ -2,7 +2,7 @@
 import { createEventDispatcher, onMount } from "svelte";
 import { fade } from "svelte/transition";
 import Overlay from "./helpers/Overlay.svelte";
-import ResizeObserver from 'resize-observer-polyfill'
+// import ResizeObserver from 'resize-observer-polyfill';
 
 export let showCloseButton: string | undefined = undefined
 // Read-only
@@ -27,17 +27,17 @@ function updateMarginTop() {
 
 const dispatch = createEventDispatcher<{close: {}}>()
 
-let resizeObserver = new ResizeObserver(updateMarginTop)
+// let resizeObserver = new ResizeObserver(updateMarginTop)
 
 onMount(() => {
-	resizeObserver.observe(overlay)
-	resizeObserver.observe(dialogWindow)
+	// resizeObserver.observe(overlay)
+	// resizeObserver.observe(dialogWindow)
 
-	updateMarginTop()
+	// updateMarginTop()
 
-	return () => {
-		resizeObserver.disconnect()
-	}
+	// return () => {
+	// 	resizeObserver.disconnect()
+	// }
 })
 </script>
 
@@ -66,7 +66,7 @@ onMount(() => {
 	</div>
 </Overlay>
 
-<style>
+<style lang="scss">
 .window_container {
 	width: 100%;
 	display: flex;

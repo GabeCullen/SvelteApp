@@ -3,7 +3,6 @@ export const allInteractiveOverlays: Writable<Symbol[]> = writable([])
 </script>
 
 <script lang="ts">
-import {sassPlugin} from "esbuild-sass-plugin"
 import { onMount, tick } from "svelte";
 import { createEventDispatcher } from "svelte";
 import { get, writable } from "svelte/store";

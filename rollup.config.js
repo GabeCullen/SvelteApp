@@ -6,8 +6,8 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-// import "json" plugin
-import json from '@rollup/plugin-json';
+import json from '@rollup/plugin-json'; // import "json" plugin
+import scss from 'rollup-plugin-scss';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -41,8 +41,8 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
-		// add "json" plugin
-		json(),
+		scss(), // will output compiled styles to "bundle.css"
+		json(), // add "json" plugin
 		
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
